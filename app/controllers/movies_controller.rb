@@ -15,10 +15,12 @@ class MoviesController < ApplicationController
   # GET /movies/new
   def new
     @movie = Movie.new
+    consultar_clientes
   end
 
   # GET /movies/1/edit
   def edit
+    consultar_clientes
   end
 
   # POST /movies or /movies.json
@@ -59,16 +61,16 @@ class MoviesController < ApplicationController
     end
   end
 
+    # Only allow a list of trusted parameters through.
+    def movie_params
+      params.require(:movie).permit(:name, :client_id)
+    end
+    
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_movie
       @movie = Movie.find(params[:id])
-    end
-    
-
-    # Only allow a list of trusted parameters through.
-    def movie_params
-      params.require(:movie).permit(:name, :client_id)
     end
     
     #SE AGREGA UN METODO PARA PERMITIR LA CONSULTA

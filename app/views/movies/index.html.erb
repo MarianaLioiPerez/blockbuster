@@ -1,14 +1,23 @@
-<p style="color: green"><%= notice %></p>
 
-<h1>Movies</h1>
-
-<div id="movies">
+<body class="peliculas-body">
+  <section class="tarjetas row">
   <% @movies.each do |movie| %>
-    <%= render movie %>
-    <p>
-      <%= link_to "Show this movie", movie %>
-    </p>
-  <% end %>
-</div>
+      <div class="card shadow p-3 mb-5" style="width: 18rem;">
+        <div class="card-body">
+                <%= render movie %>
+          <div class="list-group list-group-flush">
+              <p class="">
+                <%= link_to "Mostrar Arrriendo", movie, class:"mostrar-peli" %>
+              </p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </section>
 
-<%= link_to "New movie", new_movie_path %>
+  <p style="color: green"><%= notice %></p>
+
+
+  <div class="container w-25 nuevo"><%= link_to "Nuevo Arriendo >", new_movie_path, class:"nuevo2" %></div>
+</body>
+

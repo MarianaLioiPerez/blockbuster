@@ -10,15 +10,15 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :titulo, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
   
   <div>
-    <%= form.label :Cliente, style: "display: block" %>
-    <%= form.text_field :client_id %>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :client_id, style: "display: block" %>
+    <%= form.collection_select :client_id, @clients, :id, :name, prompt: "Seleccionar" %> 
   </div>
 
   <div>

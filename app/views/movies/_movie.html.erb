@@ -1,12 +1,8 @@
 <div id="<%= dom_id movie %>">
-  <p>
-    <strong> Titulo:</strong>
-    <%= movie.name %>
-  </p>
+  <p class="etiqueta-pelicula"><strong> TITULO</strong></p>
+  <p class="texto"><%= movie.name %></p>
 
-  <p>
-    <strong>Client:</strong>
-    <%= movie.client %>
-  </p>
+  <p class="etiqueta-pelicula"><strong>CLIENTE</strong></p>
+  <p class="texto2"><%= movie.client.try(:name)%></p>
 
 </div>
